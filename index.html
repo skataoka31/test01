@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="utf-8">
+		<title>テストサイト</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@200&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="test.css">
+	</head>
+
+	<body>
+
+		<h1>JSで時刻表示</h1>
+		<p>ボタンをクリックすると日時を表示するよ</p>
+		<button onclick="dateFunction()">日時を表示します</button>
+		<p id="date">ここに今日の日時が表示されます！</p>
+
+		<script>
+			function dateFunction() {
+				//日付用のオブジェクトの作成します。
+				var date = new Date().toLocaleString({ timeZone: 'Asia/Tokyo' });
+				//段落タグの中身を"date"で置き換える
+				var pelem = document.getElementById("date");
+				pelem.innerHTML = date;
+			}
+		</script>
+
+	</body>
+
+</html>
